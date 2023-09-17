@@ -4,10 +4,10 @@
 
 // const email = document.getElementById("email");
 // const password = document.getElementById("password");
-// const registerBtn = document.getElementById("register-btn");
+// const loginBtn = document.getElementById("login-btn");
 // const errorMessage = document.getElementById("error-message");
 
-// const handleRegister = () => {
+// const handleLogin = () => {
 //     signInWithEmailAndPassword(auth, email.value, password.value)
 //     .then((userCredential) => {
 //         const user = userCredential.user;
@@ -24,4 +24,4 @@
 
 // const saveUser = async (email) => {}
 
-// loginBtn.addEventListener("click", handleRegister);
+// loginBtn.addEventListener("click", handleLogin);

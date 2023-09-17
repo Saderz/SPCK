@@ -2,13 +2,13 @@ import { auth, db } from "./config.js";
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js"
 import { collection, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js"
 
-const email = document.getElementById("email");
-const password = document.getElementById("password");
+const email = document.getElementById("register-email").value;
+const password = document.getElementById("register-password").value;
 const registerBtn = document.getElementById("register-btn");
 const errorMessage = document.getElementById("error-message");
 
 const handleRegister = () => {
-    createUserWithEmailAndPassword(auth, email.value, password.value)
+    createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         const user = userCredential.user;
         console.log(user.email);
