@@ -241,6 +241,11 @@ a:focus {
   border-radius: 0 0 15px 15px;
 }
 
+.row2 {
+  display: flex;
+  justify-content: center;
+}
+
 .slider_section .row {
   -webkit-box-align: center;
       -ms-flex-align: center;
