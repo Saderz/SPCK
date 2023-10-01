@@ -4,10 +4,11 @@ import { collection, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.3
 
 const email = document.getElementById("register-email");
 const password = document.getElementById("register-password");
-const registerBtn = document.getElementById("register-btn");
+const registerBtn = document.getElementById("formRegister");
 const errorMessage = document.getElementById("error-message");
 
-const handleRegister = () => {
+const handleRegister = (e) => {
+    e.preventDefault();
     createUserWithEmailAndPassword(auth, email.value, password.value)
     .then((userCredential) => {
         const user = userCredential.user;
@@ -22,4 +23,4 @@ const handleRegister = () => {
     });
 };
 
-registerBtn.addEventListener("click", handleRegister);
+registerBtn.addEventListener("submit", handleRegister);

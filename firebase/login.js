@@ -4,10 +4,11 @@ import { collection, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.3
 
 const email = document.getElementById("login-email");
 const password = document.getElementById("login-password");
-const loginBtn = document.getElementById("login-btn");
+const loginBtn = document.getElementById("formLogin");
 const errorMessage = document.getElementById("error-message");
 
-const handleLogin = () => {
+const handleLogin = (e) => {
+    e.preventDefault();
     signInWithEmailAndPassword(auth, email.value, password.value)
     .then((userCredential) => {
         const user = userCredential.user;
@@ -23,4 +24,4 @@ const handleLogin = () => {
     });
 };
 
-loginBtn.addEventListener("click", handleLogin);
+loginBtn.addEventListener("submit", handleLogin);
