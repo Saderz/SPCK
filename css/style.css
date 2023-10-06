@@ -243,7 +243,7 @@ a:focus {
 
 .row2 {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .slider_section .row {
@@ -361,7 +361,7 @@ a:focus {
 
 .shop_section .box .img-box img {
   max-width: 87%;
-  /* max-height: 145px; */
+  max-height: 238px;
 }
 
 .shop_section .box .detail-box {

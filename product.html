@@ -19,7 +19,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
 
-    <title>Shop</title>
+    <title>Product</title>
 
     <!-- slider stylesheet -->
     <link
@@ -27,6 +27,8 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     />
+
+    <link rel="stylesheet" href="/css/product.css">
 
     <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -96,77 +98,74 @@
       </header>
       <!-- end header section -->
       <!-- slider section -->
-
-      <section class="slider_section">
-        <div class="slider_container">
-          <div
-            id="carouselExampleIndicators"
-            class="carousel slide"
-            data-ride="carousel"
-          >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-md-7">
-                      <div class="detail-box">
-                        <h1>
-                          Welcome To Our <br />
-                          Light Novel Shop
-                        </h1>
-                        <p>
-                          Tại đây, bạn sẽ được khám phá một thế giới đa dạng với
-                          các thể loại Light Novel phong phú mà chúng tôi có
-                          sẵn. Từ những câu chuyện tình yêu hài hước và đáng yêu
-                          (Romcom), đến những cuộc phiêu lưu kỳ thú trong thế
-                          giới huyền bí (Fantasy), và cả những trò chơi thú vị
-                          đưa bạn vào những thế giới ảo đặc biệt (Game), chúng
-                          tôi đảm bảo sẽ có những câu chuyện phù hợp với mọi sở
-                          thích và sự tò mò của bạn.
-                        </p>
-                        <a href=""> Contact Us </a>
-                      </div>
-                    </div>
-                    <div class="col-md-5">
-                      <div class="img-box">
-                        <img src="/img/welcome.png" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- end slider section -->
     </div>
     <!-- end hero area -->
 
-    <!-- shop section -->
+    <main class="containerP">
 
-    <section class="shop_section layout_padding">
-      <div class="container">
-        <div class="heading_container heading_center">
-          <h2>Latest Products</h2>
+      <!-- Left Column / Headphones Image -->
+      <div class="left-column">
+        <img data-image="black" class="activeP" src="https://firebasestorage.googleapis.com/v0/b/spck-f10f5.appspot.com/o/product-2.jpg?alt=media" alt="">
+        <img data-image="blue" src="images/blue.png" alt="">
+        <img data-image="red" src="images/red.png" alt="">
+      </div>
+
+
+      <!-- Right Column -->
+      <div class="right-column">
+
+        <!-- Product Description -->
+        <div class="product-description">
+          <span>Light Novel</span>
+          <h1>Liar Liar Vol 14</h1>
+          <p></p>
         </div>
-        <div class="row"></div>
-        <div class="row2">
-            <div class="btn-box" id="previous">
-              <a href="#"> Back </a>
+
+        <!-- Product Configuration -->
+        <div class="product-configuration">
+
+          <!-- Product Color -->
+          <div class="product-color">
+            <span>Image</span>
+
+            <div class="color-choose">
+              <div>
+                <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+                <label for="red"><span></span></label>
+              </div>
+              <div>
+                <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+                <label for="blue"><span></span></label>
+              </div>
+              <div>
+                <input data-image="black" type="radio" id="black" name="color" value="black">
+                <label for="black"><span></span></label>
+              </div>
             </div>
-            <div class="btn-box" id="next">
-              <a href="#"> Next </a>
+
+          </div>
+
+          <!-- Cable Configuration -->
+          <div class="cable-config">
+            <span>Type</span>
+
+            <div class="cable-choose">
+              <button>Normal</button>
+              <button>Special (Acrylic Keychain)</button>
+              <button>Limited (B2 Tapestry)</button>
             </div>
+
+            <!-- <a href="#">How to configurate your headphones</a> -->
+          </div>
+        </div>
+
+        <!-- Product Pricing -->
+        <div class="product-price">
+          <span>148$</span>
+          <a href="#" class="cart-btn">Add to cart</a>
         </div>
       </div>
-    </section>
-
-    <!-- end saving section -->
-
-    <!-- why section -->
-    <!-- end client section -->
-
+    </main>
     <!-- info section -->
 
     <section class="info_section layout_padding2-top">
@@ -249,8 +248,9 @@
     <script src="js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
-    <script type="module" src="js/handleProduct.js"></script>
+    <!-- <script type="module" src="js/handleProduct.js"></script> -->
     <script type="module" src="firebase/displayName.js"></script>
     <script type="module" src="firebase/logout.js"></script>
+    <script src="js/productPage.js"></script>
   </body>
 </html>
