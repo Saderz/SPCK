@@ -18,7 +18,9 @@ const displayName = () => {
     if (user) {
       const uid = user.uid;
       userIcon.remove();
-      displayUsername.textContent = `${user.email}`;
+      displayUsername.textContent = `${
+        !!user.displayName ? user.displayName : user.email
+      }`;
     } else {
       window.location = "./login.html";
     }
