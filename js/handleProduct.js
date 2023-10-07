@@ -17,7 +17,7 @@ const displayProducts = () => {
     const divBox = document.createElement("div");
     divBox.classList.add("box");
     const productLink = document.createElement("a");
-    productLink.href = "";
+    productLink.href = "./product.html?productId=" + cardItem.id;
     divBox.appendChild(productLink);
     card.appendChild(divBox);
 
