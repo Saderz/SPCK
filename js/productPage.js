@@ -81,11 +81,18 @@ const getImageDetail = () => {
 const handleAddToCart = () => {
   const cartList = JSON.parse(localStorage.getItem("cartList"));
   if (cartList) {
-    cartList.push(product);
+    const productIndex = cartList.findIndex((item) => item.id === product.id);
+    if (productIndex > -1) {
+      cartList[productIndex].quantity += 1;
+    } else {
+      product.quantity = 1;
+      cartList.push(product);
+    }
     localStorage.setItem("cartList", JSON.stringify(cartList));
   } else {
-    localStorage.setItem("cartList", JSON.stringify([product]));  
-  }console.log([product]);
+    product.quantity = 1;
+    localStorage.setItem("cartList", JSON.stringify([product]));
+  }
 };
 
 const displayProduct = () => {
@@ -96,12 +103,8 @@ const displayProduct = () => {
   const addBtn = document.getElementById("add-to-cart");
   const getProducts = async () => { 
     const url = new URL(`https://65103f433ce5d181df5d0feb.mockapi.io/products?type=${product.type}`);
-    // Phân trang với page là số trang muốn tới còn limit là giới hạn trong 1 trang
     url.searchParams.append("page", 1);
     url.searchParams.append("limit", 4);
-    // Sắp xếp các sản phẩm theo thứ tự giảm dần thời gian tạo (cái mới nhất thì lên đầu)
-    // url.searchParams.append("sortBy", "createdAt");
-    // url.searchParams.append("order", "asc");
     const response = await fetch(url);
     products = await response.json();
     displayProducts();
@@ -117,27 +120,12 @@ const displayImage = () => {
   document.getElementById("img-4").src = imageDe.imageDetail[3];
   $(".imageProduct").on("click", function (e) {
     document.getElementById("product-img").src = e.target.src;
-    // document.getElementById(e.target.id).style.border = "";
-    // document.getElementById(e.target.id).style.borderRadius = "";
-    // document.getElementById(e.target.id).style = "border: 2px solid #f16179; border-radius: 10px;"
   });
 };
-
-// $(document).ready(function () {
-//   $(".img-choose input").on("click", function () {
-//     const productImage = product.image
-
-//     $(".active").removeClass("active");
-//     $(".left-column img[data-image = " + productImage + "]").addClass(
-//       "active"
-//     );
-//     $(this).addClass("active");
-//   });
-// });
 
 if (!productId) {
   window.location = "./product.html?productId=1";
 } else {
   getProductDetail();
   getImageDetail();
-}
+};
