@@ -874,5 +874,153 @@ a:focus {
   text-overflow: ellipsis;
 }
 
+.cart-page{
+  margin: 80px auto;
+  max-width: 1200px;
+}
+
+.small-container table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cart-info small{
+  font-size: 16px;
+}
+
+.small-container th{
+  text-align: left;
+  padding: 5px;
+  color: black;
+  background: #f9ece6;
+  font-weight: normal;
+  border-radius: 3px;
+}
+
+.small-container td{
+  padding: 10px 7px;
+}
+
+.small-container td input{
+  width: 60px;
+  height: 45px;
+  padding: 15px;
+}
+
+.cart-info a{
+  color: red;
+  font-size: 12px;
+}
+
+.small-container td img{
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.total-price{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.total-price table{
+  border-top: 3px solid #f16179;
+  width: 100%;
+  max-width: 350px;
+}
+
+td:last-child{
+  text-align: right;
+}
+
+th:last-child {
+  text-align: right;
+}
+
+.pay-btn {
+  display: inline-block;
+  background-color: #f16179;
+  border: 1px solid #f16179;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 12px 30px;
+  transition: all .5s;
+}
+
+.pay-btn:hover {
+  background-color: transparent;
+  color: #f16179;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+  width: 45px;
+  height: 42px;
+  line-height: 1.65;
+  float: left;
+  display: block;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+  border: 1px solid #eee;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+.quantity-nav {
+  float: left;
+  position: relative;
+  height: 42px;
+}
+
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  border-left: 1px solid #eee;
+  width: 20px;
+  text-align: center;
+  color: #333;
+  font-size: 13px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif !important;
+  line-height: 1.7;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  height: 50%;
+  top: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.quantity-button.quantity-down {
+  position: absolute;
+  bottom: -1px;
+  height: 50%;
+}
+
 /* end footer section*/
-/*# sourceMappingURL=style.css.map */

@@ -7,6 +7,7 @@
 
 /* Columns */
 .left-column {
+    top: 200px;
     width: 65%;
     position: relative;
 }
@@ -20,17 +21,13 @@
 /* Left Column */
 .left-column img {
     width: 100%;
-    max-width: 350px;
-    max-height: 500px;
+    height: 100%;
+    max-width: 460px;
+    max-height: 690px;
     position: absolute;
     left: 150px;
     top: 0;
-    opacity: 0;
     transition: all 0.3s ease;
-}
-
-.left-column img.activeP {
-    opacity: 1;
 }
 
 
@@ -79,46 +76,24 @@
     margin-bottom: 30px;
 }
 
-.color-choose div {
+.img-choose div {
     display: inline-block;
-}
-
-.color-choose input[type="radio"] {
-    display: none;
-}
-
-.color-choose input[type="radio"]+label span {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    margin: -1px 4px 0 0;
-    vertical-align: middle;
     cursor: pointer;
-    border-radius: 50%;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.img-choose img {
+    width: 160px;
+    height: 230px;
+    border-radius: 5px;
+    border: 2px solid #E1E8EE;
 }
 
-.color-choose input[type="radio"]+label span {
-    border: 2px solid #FFFFFF;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
-}
-
-.color-choose input[type="radio"]#red+label span {
-    background-color: #C91524;
-}
-
-.color-choose input[type="radio"]#blue+label span {
-    background-color: #314780;
-}
-
-.color-choose input[type="radio"]#black+label span {
-    background-color: #323232;
-}
-
-.color-choose input[type="radio"]:checked+label span {
-    background-image: url(images/check-icn.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-}
+/* .imageProduct:hover,
+.imageProduct:active {
+    border: 2px solid #86939E;
+    border-radius: 10px;
+} */
 
 /* Cable Configuration */
 .cable-choose {
@@ -126,6 +101,8 @@
 }
 
 .cable-choose button {
+    margin-top: 10px;
+    margin-left: 10px;
     border: 2px solid #E1E8EE;
     border-radius: 6px;
     padding: 13px 20px;
@@ -185,7 +162,8 @@
 
 .cart-btn {
     display: inline-block;
-    background-color: #7DC855;
+    background-color: #f16179;
+    border: 1px solid #f16179;
     border-radius: 6px;
     font-size: 16px;
     color: #FFFFFF;
@@ -195,7 +173,8 @@
 }
 
 .cart-btn:hover {
-    background-color: #64af3d;
+    background-color: transparent;
+    color: #f16179;
 }
 
 /* Responsive */

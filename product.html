@@ -84,7 +84,7 @@
                 <i class="fa fa-user" aria-hidden="true"></i>
                 <span class="display-username"> Login </span>
               </a>
-              <a href="">
+              <a href="cart.html">
                 <i class="fa fa-shopping-bag" aria-hidden="true"></i>
               </a>
               <form class="form-inline">
@@ -105,9 +105,7 @@
 
       <!-- Left Column / Headphones Image -->
       <div class="left-column">
-        <img id="product-img" data-image="black" class="activeP" src="https://firebasestorage.googleapis.com/v0/b/spck-f10f5.appspot.com/o/product-2.jpg?alt=media" alt="">
-        <img data-image="blue" src="images/blue.png" alt="">
-        <img data-image="red" src="images/red.png" alt="">
+        <img id="product-img" src="" alt="">
       </div>
 
 
@@ -116,8 +114,8 @@
 
         <!-- Product Description -->
         <div class="product-description">
-          <span>Light Novel</span>
-          <h1 id="product-name">Liar Liar Vol 14</h1>
+          <span id="product-type"></span>
+          <h1 id="product-name"></h1>
           <p></p>
         </div>
 
@@ -128,19 +126,11 @@
           <div class="product-color">
             <span>Image</span>
 
-            <div class="color-choose">
-              <div>
-                <input data-image="red" type="radio" id="red" name="color" value="red" checked>
-                <label for="red"><span></span></label>
-              </div>
-              <div>
-                <input data-image="blue" type="radio" id="blue" name="color" value="blue">
-                <label for="blue"><span></span></label>
-              </div>
-              <div>
-                <input data-image="black" type="radio" id="black" name="color" value="black">
-                <label for="black"><span></span></label>
-              </div>
+            <div class="img-choose">
+              <div class="imageProduct" id="divIMG1"><img id="img-1"></div>
+              <div class="imageProduct" id="divIMG2"><img id="img-2"></div>
+              <div class="imageProduct" id="divIMG3"><img id="img-3"></div>
+              <div class="imageProduct" id="divIMG4"><img id="img-4"></div>
             </div>
 
           </div>
@@ -152,7 +142,7 @@
             <div class="cable-choose">
               <button>Normal</button>
               <button>Special (Acrylic Keychain)</button>
-              <button>Limited (B2 Tapestry)</button>
+              <!-- <button>Limited (B2 Tapestry)</button> -->
             </div>
 
             <!-- <a href="#">How to configurate your headphones</a> -->
@@ -161,12 +151,28 @@
 
         <!-- Product Pricing -->
         <div class="product-price">
-          <span id="product-price">148$</span>
+          <span id="product-price">$</span>
           <a href="#" class="cart-btn" id="add-to-cart">Add to cart</a>
         </div>
       </div>
     </main>
     <!-- info section -->
+    <section class="shop_section layout_padding">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2>Related Products</h2>
+        </div>
+        <div class="row"></div>
+        <!-- <div class="row2">
+            <div class="btn-box" id="previous">
+              <a href="#"> Back </a>
+            </div>
+            <div class="btn-box" id="next">
+              <a href="#"> Next </a>
+            </div>
+        </div> -->
+      </div>
+    </section>
 
     <section class="info_section layout_padding2-top">
       <div class="social_container">
