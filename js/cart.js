@@ -1,8 +1,16 @@
-let prodcuts = {};
+let products = [];
+
+const handleChangeQuantity = (id, value) => {
+  const index = products.findIndex((item) => item.id == id);
+  products[index].quantity = value;
+  localStorage.setItem("cartList", JSON.stringify(products));
+  displayProductsCart();
+};
 
 const displayProductsCart = () => {
   const tab = document.getElementById("productLI");
   const totalPrice = document.getElementById("TotalPriceDislay");
+  tab.innerHTML = "";
   products.forEach((item) => {
     const trEle = document.createElement("tr");
     const tdEle1 = document.createElement("td");
@@ -38,12 +46,15 @@ const displayProductsCart = () => {
     quantityInput.value = item.quantity;
     quantityInput.min = "1";
     quantityInput.max = "9";
+    quantityInput.addEventListener("change", (e) => {
+      handleChangeQuantity(item.id, e.target.value);
+    });
 
     productQuantity.appendChild(quantityInput);
     tdEle2.appendChild(productQuantity);
 
     tdEle3.classList.add("subtotalPrice");
-    tdEle3.innerHTML = item.price*item.quantity + " $";
+    tdEle3.innerHTML = item.price * item.quantity + " $";
 
     trEle.appendChild(tdEle1);
     trEle.appendChild(tdEle2);
@@ -62,39 +73,6 @@ const displayProductsCart = () => {
 const getProductsCart = () => {
   products = JSON.parse(localStorage.getItem("cartList"));
   displayProductsCart();
-}
+};
 
 getProductsCart();
-
-jQuery(
-  '<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>'
-).insertAfter(".quantity input");
-jQuery(".quantity").each(function () {
-  var spinner = jQuery(this),
-    input = spinner.find('input[type="number"]'),
-    btnUp = spinner.find(".quantity-up"),
-    btnDown = spinner.find(".quantity-down"),
-    min = input.attr("min"),
-    max = input.attr("max");
-
-  btnUp.click(function () {
-    var oldValue = parseFloat(input.val());
-    if (oldValue >= max) {
-      var newVal = oldValue;
-    } else {
-      var newVal = oldValue + 1;
-    }
-    spinner.find("input").val(newVal);
-    spinner.find("input").trigger("change");
-  });
-  btnDown.click(function () {
-    var oldValue = parseFloat(input.val());
-    if (oldValue <= min) {
-      var newVal = oldValue;
-    } else {
-      var newVal = oldValue - 1;
-    }
-    spinner.find("input").val(newVal);
-    spinner.find("input").trigger("change");
-  });
-});
