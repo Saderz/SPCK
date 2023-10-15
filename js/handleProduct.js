@@ -71,28 +71,6 @@ const url2 = new URL("https://65103f433ce5d181df5d0feb.mockapi.io/products");
 const response2 = await fetch(url2);
 products2 = await response2.json();
 const totalPages = Math.ceil(products2.length / 8);
-console.log(totalPages);
-
-// const addProduct = async () => {
-//   const newProductRequest = {
-  //     name: nameElm.value,
-  //     price: Number(priceElm.value),
-  //     quantity: Number(quantityElm.value),
-  //   };
-//   const response = await fetch(
-//     "https://651456bb8e505cebc2eb2685.mockapi.io/products",
-//     {
-//       method: "POST",
-//       headers: { "content-type": "application/json" },
-//       body: JSON.stringify(newProductRequest),
-//     }
-//   );
-//   const newProduct = await response.json();
-//   products = [...products, newProduct];
-//   displayProducts();
-// };
-
-// addBtn.addEventListener("click", addProduct);
 
 if (window.location.href.indexOf("shop") > -1) {
   const nextPageBtn = document.getElementById("next");

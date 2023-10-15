@@ -97,6 +97,7 @@ const handleAddToCart = () => {
 
 const displayProduct = () => {
   document.getElementById("product-img").src = product.image;
+  document.getElementById("img-1").src = product.image;
   document.getElementById("product-type").innerHTML = product.type;
   document.getElementById("product-name").textContent = product.name;
   document.getElementById("product-price").textContent = `${product.price} $`;
@@ -114,10 +115,9 @@ const displayProduct = () => {
 };
 
 const displayImage = () => {
-  document.getElementById("img-1").src = imageDe.imageDetail[0];
-  document.getElementById("img-2").src = imageDe.imageDetail[1];
-  document.getElementById("img-3").src = imageDe.imageDetail[2];
-  document.getElementById("img-4").src = imageDe.imageDetail[3];
+  document.getElementById("img-2").src = imageDe.imageDetail[0];
+  document.getElementById("img-3").src = imageDe.imageDetail[1];
+  document.getElementById("img-4").src = imageDe.imageDetail[2];
   $(".imageProduct").on("click", function (e) {
     document.getElementById("product-img").src = e.target.src;
   });

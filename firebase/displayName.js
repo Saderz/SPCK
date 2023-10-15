@@ -12,12 +12,14 @@ const loginBtn = document.getElementById("login-btn");
 const errorMessage = document.getElementById("error-message");
 const displayUsername = document.getElementsByClassName("display-username")[0];
 const userIcon = document.getElementsByClassName("fa-user")[0];
+const linkIndex = document.getElementsByClassName("lgtoIndex")[0];
 
 const displayName = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
       userIcon.remove();
+      linkIndex.href = "./index.html"
       displayUsername.textContent = `${
         !!user.displayName ? user.displayName : user.email
       }`;

@@ -17,9 +17,9 @@ const handleLogin = (e) => {
     })
     .catch((error) => {
         if (error.code === "auth/invalid-email") {
-            errorMessage.textContent = "Email không hợp lệ";
-        } else if (error.code === "auth/missing-password") {
-            errorMessage.textContent = "Chưa nhập password";
+            errorMessage.innerHTML = "Email không hợp lệ";
+        } else if (error.code === "auth/wrong-password") {
+            errorMessage.innerHTML = "Sai mật khẩu";
         }
     });
 };
